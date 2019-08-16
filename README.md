@@ -23,10 +23,30 @@ In this challenge, you are to build the Smurfs village once again, only this tim
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] What problem does the context API help solve?
+
+When a lot of child components need access to the same state, it can be tedious and repetitive to prop drill to each component. Context API lets you wrap everything in a Provider component so each child component can access the state.
+
+
 - [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+The store is a big central state container of the most current data being managed by the app. It’s where each component shops for the state it needs, hence single source of truth. Actions name things that could change the state and send new values as payload. Reducers take in actions and perform the expected function that corresponds with that action, taking in the payload and returning the changed state to the store.
+
+
 - [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+Component state is only defined and used within that single component, or perhaps sent as props to a child component. A good time to use component state is for form inputs.
+Application state is accessible to every component of the app, and may be something like user info that will be displayed in various places across the app.
+
+
 - [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+Redux-thunk is middleware that allows you to perform asynchronous actions with Redux, which would otherwise be synchronous. This allows for promises and various states like beginning a fetch call, awaiting fetched data, and success or failure. It can be described like a turnstile, allowing one action through at a time.
+
+
 - [ ] What is your favorite state management system you've learned and this sprint? Please explain why!
+
+Context API seems like the simplest to implement, so I think I like that best. Redux has more moving parts and we haven’t yet built something complex enough to show off its true power, but I’ve spent more time working with Redux so far, and I get the impression it is more widely used, so I’m trying to focus on learning it well.
+
 
 ## Project Set Up
 
