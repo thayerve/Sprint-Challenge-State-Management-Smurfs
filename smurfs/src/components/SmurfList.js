@@ -5,17 +5,21 @@ import { getSmurfs } from '../actions';
 // import { Header, Card } from 'semantic-ui-react';
 
 const SmurfList = props => {
-    console.log('props from SmurfList component: ', props);
+    // console.log('props from SmurfList component: ', props);
     return (
         <div>
             <button onClick={props.getSmurfs}>
-                {props.isLoading ? (
-                    <Loader type="TailSpin" color="#00BFFF" height="15" width="100" />
+                {props.isFetching ? (
+                    <Loader type="TailSpin" color="#00BFFF" height={15} width={100} />
                 ) : (
-                        "List all Smurfs in the village"
+                        "Meet our Smurf villagers!"
                     )}
             </button>
-            {props.smurfs.map(smurf => <div>{smurf.name}</div>)}
+                {props.smurfs.map(smurf => {
+                    return (
+                        <div key={smurf.name}>{smurf.name}, age {smurf.age}, as tall as {smurf.height}</div>
+                    )
+                })}
         </div>
     );
 

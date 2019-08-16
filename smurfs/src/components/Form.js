@@ -6,7 +6,7 @@ import { postSmurf } from '../actions';
 
 
 function SmurfForm(props) {
-  console.log('props in SmurfForm component: ', props);
+  // console.log('props in SmurfForm component: ', props);
   const [newSmurf, setNewSmurf] = useState({
     name: "",
     age: "",
@@ -31,24 +31,31 @@ function SmurfForm(props) {
 
     return (
       <form onSubmit={event => handleSubmit(event)}>
-
+        <h3> Welcome, new Smurf! Would you like to join our village? </h3>
+        <h4> Tell us about yourself! </h4>
+        <div>
         <label>
           Smurf Name:
           <input type="text" name="name" placeholder="Smurf name" value={newSmurf.name} onChange={handleChange} />
         </label>
+        </div>
 
+        <div>
         <label>
           Smurf Age:
         <input type="text" name="age" placeholder="Smurf age" value={newSmurf.age} onChange={event => handleChange(event)} />
         </label>
+        </div>
 
+        <div>
         <label>
           Smurf Height:
         <input type="text" name="height" placeholder="Smurf height" value={newSmurf.height} onChange={event => handleChange(event)} />
         </label>
+        </div>
 
 
-        <button>Submit</button>
+        <button>Join us!</button>
       </form>
     );
   }
